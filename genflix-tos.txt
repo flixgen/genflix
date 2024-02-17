@@ -1,0 +1,42 @@
+Terms of Service for Genflix
+Introduction
+Welcome to Genflix, a video generation service with scheduling capabilities ("Service"). These Terms of Service ("Terms") govern your use of our Service, including our website, mobile application, and any associated services provided. By accessing or using the Service, you agree to be bound by these Terms. If you disagree with any part of the terms, then you do not have permission to access the Service.
+
+Eligibility
+You must be at least 18 years old to use our Service, or the age of majority in your jurisdiction, whichever is higher. By agreeing to these Terms, you represent and warrant that you meet this age requirement.
+
+Account Registration
+To use certain features of the Service, you must register for an account. You agree to provide accurate, current, and complete information during the registration process and to update such information to keep it accurate, current, and complete.
+
+Content
+User-Generated Content
+You retain copyright and any other rights you already hold in content you create and share on Genflix. However, by uploading or otherwise submitting content, you grant us a worldwide, non-exclusive, royalty-free license to use, reproduce, modify, adapt, publish, translate, create derivative works from, distribute, and display such content in connection with the Service.
+
+Prohibited Content
+You agree not to upload, post, email, transmit, or otherwise make available any content that is unlawful, harmful, threatening, abusive, harassing, tortious, defamatory, vulgar, obscene, libelous, invasive of another's privacy, hateful, or racially, ethnically, or otherwise objectionable.
+
+Use of the Service
+You are responsible for your use of the Service and for any consequences thereof. You may not use our Service:
+
+In any way that breaches any applicable local, national, or international law or regulation.
+For the purpose of exploiting, harming, or attempting to exploit or harm minors in any way.
+To transmit, or procure the sending of, any unsolicited or unauthorized advertising or promotional material or any other form of similar solicitation (spam).
+To knowingly transmit any data, send or upload any material that contains viruses, Trojan horses, worms, time-bombs, keystroke loggers, spyware, adware, or any other harmful programs or similar computer code designed to adversely affect the operation of any computer software or hardware.
+Scheduling
+The Service allows you to schedule video generation tasks. You agree to use the scheduling feature responsibly and not to schedule tasks in a way that could overload our servers or interfere with the service for other users.
+
+Termination
+We may terminate or suspend your account and bar access to the Service immediately, without prior notice or liability, under our sole discretion, for any reason whatsoever and without limitation, including but not limited to a breach of the Terms.
+
+Disclaimer
+The Service is provided on an "AS IS" and "AS AVAILABLE" basis. We make no representations or warranties of any kind, express or implied, as to the operation of our Service or the information, content, materials, or products included on our Service.
+
+Limitation of Liability
+In no event shall Genflix, nor its directors, employees, partners, agents, suppliers, or affiliates, be liable for any indirect, incidental, special, consequential, or punitive damages, including without limitation, loss of profits, data, use, goodwill, or other intangible losses, resulting from your access to or use of or inability to access or use the Service.
+
+Changes
+We reserve the right, at our sole discretion, to modify or replace these Terms at any time. By continuing to access or use our Service after those revisions become effective, you agree to be bound by the revised terms.
+
+Contact Us
+If you have any questions about these Terms, please contact us at [contact information].
+

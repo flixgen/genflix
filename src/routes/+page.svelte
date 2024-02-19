@@ -2,6 +2,7 @@
 	import { enhance } from '$app/forms';
 	import { fly } from 'svelte/transition';
 	import '../app.css';
+	import { onMount } from 'svelte';
 
 	// const generateObjectWithAspectRatio = (width, height) => ({ width, height });
 
@@ -17,6 +18,19 @@
 	// 	}
 	// }
 
+	onMount(() => {
+		const syncPointer = ({ x: pointerX, y: pointerY }) => {
+			const x = pointerX.toFixed(2);
+			const y = pointerY.toFixed(2);
+			const xp = (pointerX / window.innerWidth).toFixed(2);
+			const yp = (pointerY / window.innerHeight).toFixed(2);
+			document.documentElement.style.setProperty('--x', x);
+			document.documentElement.style.setProperty('--xp', xp);
+			document.documentElement.style.setProperty('--y', y);
+			document.documentElement.style.setProperty('--yp', yp);
+		};
+		document.body.addEventListener('pointermove', syncPointer);
+	});
 	const videos = [
 		{
 			title: 'video 1',
@@ -300,7 +314,7 @@
 	>
 		{#each videos as item}
 			<div
-				class="rounded-lg bg-zinc-900 flex group overflow-hidden relative {item.aspectRatio ===
+				class="rounded-lg bg-zinc-900 flex group overflow-hidden_ relative {item.aspectRatio ===
 				'16:9'
 					? 'aspect-16-9 aspect-[16/9]'
 					: 'aspect-9-16 col-span-1 aspect-[9/16]'}"
@@ -334,16 +348,16 @@
 				}}
 				method="POST"
 				action=""
-				class="relative shadow-sm shadow-black gap-2 flex w-full md:w-[70%] bg-zinc-900 justify-center items-center rounded-lg p-2"
+				class="relative shadow-sm shadow-black gap-2 flex w-full md:w-[70%] bg-zinc-800 justify-center items-center rounded-lg p-2"
 			>
 				<input
 					name="email"
-					class="w-full !outline-transparent focus-visible:outline-none !ring-0 ring-transparent border-0 !appearance-none autofill:!bg-transparent rounded-lg !bg-transparent"
+					class="w-full z-10 !outline-transparent focus-visible:outline-none !ring-0 ring-transparent border-0 !appearance-none autofill:!bg-transparent rounded-lg !bg-transparent"
 					type="text"
 				/>
 
 				<button
-					class="hover:scale-105 transition-all text-zinc-200 hover:text-white right-2 bg-zinc-800 px-2 py-1 text-sm rounded-lg"
+					class="hover:scale-105 z-10 transition-all text-zinc-200 hover:text-white right-2 bg-zinc-800 px-2 py-1 text-sm rounded-lg"
 				>
 					signup
 				</button>
@@ -417,5 +431,78 @@
 	div.aspect-9-16 {
 		grid-row: span 2;
 		/* aspect-ratio: 9 / 16; */
+	}
+
+	/* Glow effect by jhey */
+	*,
+	*:after,
+	*:before {
+		box-sizing: border-box;
+	}
+
+	:root {
+		--x: 0;
+		--y: 0;
+		--xp: 0;
+		--yp: 0;
+		--bg: hsl(0 0% 10%);
+		--size: 900px;
+		--hue: calc(75 + (var(--xp) * 30)); /* Adjusts the hue range from 75° to 105° */
+		--glow: radial-gradient(
+				50% 50% at center,
+				hsl(var(--hue) 80% 85%),
+				hsl(var(--hue) 80% 70%),
+				transparent
+			)
+			calc((var(--x) * 1px) - (var(--size) * 0.5)) calc((var(--y) * 1px) - (var(--size) * 0.5)) /
+			var(--size) var(--size) no-repeat fixed;
+
+		/* --hue: calc(0 + (var(--xp) * 500));
+		--glow: radial-gradient(
+				50% 50% at center,
+				hsl(var(--hue) 80% 85%),
+				hsl(var(--hue) 80% 70%),
+				transparent
+			)
+			calc((var(--x) * 1px) - (var(--size) * 0.5)) calc((var(--y) * 1px) - (var(--size) * 0.5)) /
+			var(--size) var(--size) no-repeat fixed; */
+	}
+
+	form {
+		border: 2px solid transparent;
+		transition: background-size 0.24s;
+		touch-action: none;
+		position: relative;
+	}
+
+	form::before {
+		content: '';
+		position: absolute;
+		inset: 0;
+		background: var(--bg);
+		z-index: 2;
+		border: 4px solid transparent;
+		border-radius: 0.5rem;
+	}
+
+	form {
+		background: var(--glow), black;
+		z-index: 2;
+		position: relative;
+		inset: 0;
+	}
+
+	:root:has(form) {
+		--size: 200px;
+	}
+
+	form::after {
+		content: '';
+		position: absolute;
+		inset: -8px;
+		filter: blur(20px);
+		border: 14px solid transparent;
+		background: var(--glow);
+		border-radius: 0.5rem;
 	}
 </style>

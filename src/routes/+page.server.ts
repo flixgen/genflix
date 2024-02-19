@@ -15,14 +15,22 @@ export const actions = ({
         if (!safeParse.success) {
 
             console.log(safeParse)
-            return fail(400, { issues: safeParse.error.issues });
+            return fail(400, { message: safeParse.error.issues[0] });
         }
 
         if (safeParse.success) {
             const { error } = await supabase
                 .from('beta_signups')
                 .insert({ email })
-            if (error) console.log(error)
+
+            if (error && error.code == '23505') {
+                return fail(400, { message: `${email} already registered` })
+            }
+
+            if (error) {
+                return fail(400, { message: "something went wrong" });
+
+            }
 
         }
         return { success: true }

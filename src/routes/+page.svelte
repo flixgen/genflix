@@ -325,8 +325,9 @@
 					return async ({ result, update }) => {
 						console.log(result);
 						if (result.type === 'success') emailSubmittedSuccess = true;
-						if (result.type === 'failure') signupFail = result?.data;
+						if (result.type === 'failure') signupFail = result?.data.message;
 
+						signupFail.length = 0;
 						// `result` is an `ActionResult` object
 						// `update` is a function which triggers the default logic that would be triggered if this callback wasn't set
 					};
@@ -348,7 +349,7 @@
 				</button>
 			</form>
 			{#if signupFail}
-				{signupFail.issues[0].message}
+				{signupFail}
 			{/if}
 		{:else}
 			<div class="fonto" in:fly={{ opacity: 0, duration: 500 }}>Thanks for signing up</div>

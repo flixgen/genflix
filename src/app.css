@@ -7,5 +7,6 @@
 	src: src('/WOLFES.otf') format('otf');
 }
 body {
+	color: whitesmoke;
 	background-color: rgb(242, 242, 242);
 }

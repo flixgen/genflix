@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { enhance } from '$app/forms';
 	import { fly } from 'svelte/transition';
+	import '../app.css';
 
 	// const generateObjectWithAspectRatio = (width, height) => ({ width, height });
 
@@ -290,7 +291,7 @@
 					class="absolute z-10 clippath opacity-0 backdrop-blur-sm transition-opacity bg-black bg-opacity-0 h-full w-full"
 				></div>
 
-				<img class=" opacity-0 duration-700 relative transition-transform" src={item.cover} />
+				<img class=" opacity-0 duration-700 relative transition-transform" alt="" />
 			</div>
 		{/each}
 	</div>

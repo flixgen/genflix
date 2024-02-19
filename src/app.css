@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+	font-family: 'WOLFES.otf';
+	src: src('/WOLFES.otf') format('otf');
+}
+body {
+	background-color: rgb(242, 242, 242);
+}

@@ -1,0 +1,86 @@
+<script lang="ts">
+	import type { PageData } from './$types';
+
+	export let data: PageData;
+</script>
+
+<div class="row">
+	<div style="--ratio: 16 / 9;" class="item">4:3</div>
+	<div style="--ratio: 2 / 3;" class="item">2:3</div>
+	<div style="--ratio: 2 / 3;" class="item">2:3</div>
+</div>
+
+<div class="row">
+	<div style="--ratio: 3 / 2;" class="item">3:2</div>
+	<div style="--ratio: 16 / 9;" class="item">16:9</div>
+	<div style="--ratio: 1 / 1;" class="item">1:1</div>
+</div>
+
+<style lang="scss">
+	.row {
+		display: flex;
+		gap: 1rem;
+	}
+
+	.item {
+		flex-basis: 0;
+		aspect-ratio: var(--ratio);
+		flex-grow: calc(var(--ratio));
+	}
+
+	/* Additional Styling */
+
+	body {
+		background: #003;
+		color: #fff;
+		padding: 2rem;
+		padding-bottom: 4rem;
+	}
+
+	.row {
+		max-width: 50rem;
+		border: 1px dashed rgb(255 255 255 / 0.4);
+		margin-inline: auto;
+		padding: 0.5rem;
+	}
+
+	.row + .row {
+		margin-top: 1rem;
+	}
+
+	.item {
+		background: #f09;
+		font-weight: bold;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		font-size: 2rem;
+		position: relative;
+	}
+
+	.item + .item {
+		background: #09f;
+	}
+
+	.item + .item + .item {
+		background: #90f;
+	}
+
+	footer {
+		position: fixed;
+		left: 0;
+		bottom: 0;
+		width: 100%;
+		text-align: center;
+		background: #002;
+		color: rgb(255 255 255 / 0.6);
+
+		a {
+			color: #f09;
+		}
+
+		p {
+			margin: 1rem;
+		}
+	}
+</style>

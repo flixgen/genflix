@@ -1,0 +1,9 @@
+[
+    {
+        validation: "email",
+        code: "invalid_string",
+        message: "Invalid email",
+        path: "email",
+    },
+
+];

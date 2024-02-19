@@ -2,7 +2,7 @@
 	import { enhance } from '$app/forms';
 	import { fly } from 'svelte/transition';
 	import '../app.css';
-	import { onMount } from 'svelte';
+	import { onDestroy, onMount } from 'svelte';
 
 	// const generateObjectWithAspectRatio = (width, height) => ({ width, height });
 
@@ -31,6 +31,7 @@
 		};
 		document.body.addEventListener('pointermove', syncPointer);
 	});
+
 	const videos = [
 		{
 			title: 'video 1',
@@ -290,6 +291,10 @@
 	let signupFail: any;
 </script>
 
+<svelte:head>
+	<link rel="preload" href="/WOLFES.otf" as="font" type="font/otf" crossorigin="anonymous" />
+</svelte:head>
+
 <div class="flex gap-1 md:gap-2 items-center overflow-hidden justify-center relative w-full h-full">
 	<div
 		class="grid columns- pb-48 w-full aspect-square_ gap-1 md:gap-2 max-h-screen overflow-hidden grid-flow-dense grid-cols-4 relative"
@@ -323,7 +328,7 @@
 					class="absolute z-10 clippath opacity-0 backdrop-blur-sm transition-opacity bg-black bg-opacity-0 h-full w-full"
 				></div>
 
-				<img class=" opacity-0 duration-700 relative transition-transform" src={item.cover} />
+				<img alt="placeholder" class=" opacity-0 duration-700 relative transition-transform" />
 			</div>
 		{/each}
 	</div>
